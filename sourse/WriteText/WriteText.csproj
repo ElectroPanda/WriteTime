@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
-    <ProjectGuid>{EDDCDF60-221C-4C24-81B9-80A6107F1036}</ProjectGuid>
+    <ProjectGuid>{B8204430-5FB5-4B7F-BFFC-334FF1BCE553}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WriteTime</RootNamespace>
-    <AssemblyName>WriteTime</AssemblyName>
+    <RootNamespace>WriteText</RootNamespace>
+    <AssemblyName>WriteText</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <AppDesignerFolder>Properties</AppDesignerFolder>
