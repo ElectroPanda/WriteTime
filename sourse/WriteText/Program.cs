@@ -18,9 +18,7 @@ namespace WriteText
             string[] lines=new string[0];
            
 			string fullpath=@"C:\testfiles\speedtest\1\et.txt";
-		    if (args.Length>0) {
-		    	fullpath=@""+args[0];
-		    }
+		    if (args.Length>0) {	fullpath=@""+args[0];  }
 		    
 		    if (System.IO.File.Exists(fullpath)==false)
 		    {
@@ -29,21 +27,50 @@ namespace WriteText
 		    	gf.Close();
 		    	
 		    }
+		    
+		    
 		    	string[] filelines= System.IO.File.ReadAllLines(fullpath);
 		    	Array.Resize(ref lines,filelines.Length);
 		    	filelines.CopyTo(lines,0);
 		    	
 		    
 		    
-		    if ((lines.Length>=1))
+		    if (lines.Length==0)
 		    {
-		    	System.IO.Stream fg=System.IO.File.Create(fullpath);
+		    	
+		    DateTime staaart = DateTime.Now;
+		    System.IO.StreamWriter sr=System.IO.File.CreateText(fullpath);
+		    sr.WriteLine(staaart.ToString("hh:mm:ss.ffff"));
+		    sr.Close();
+		    }	
+		    	
+		    if ((lines.Length==1))
+		    {
+		    	DateTime laaast=new DateTime();
+		    	DateTime.TryParse(lines[0],out laaast);
+		    	DateTime Looot =DateTime.Now;
+		    	TimeSpan difff=laaast-Looot;
+				System.IO.StreamWriter fg=System.IO.File.CreateText(fullpath);
+				fg.WriteLine(lines[0]);
+		    	fg.WriteLine(Looot.ToString("hh:mm:ss.ffff")+"----->"+difff);
 		    	fg.Close();
 		    
 		    
 		    }
 		    
+		    
+		    
+		    
+		    if (lines.Length==2)
+		    {
+		    System.IO.Stream gf=System.IO.File.Create(fullpath);
+		    gf.Close();	
+		    DateTime staaart = DateTime.Now;
 		    System.IO.StreamWriter sr=System.IO.File.CreateText(fullpath);
+		    sr.WriteLine(staaart.ToString("hh:mm:ss.ffff"));
+		    sr.Close();
+		    }
+		    /*System.IO.StreamWriter sr=System.IO.File.CreateText(fullpath);
 		    if (lines.Length==1) {sr.WriteLine(lines[0]);}
             sr.WriteLine(DateTime.Now.Hour.ToString()+":"+DateTime.Now.Minute.ToString()+":"+DateTime.Now.Second.ToString()+","+DateTime.Now.Millisecond.ToString());
             sr.Close();
@@ -66,7 +93,7 @@ namespace WriteText
 			//Console.WriteLine(Eeend);
 			difff=staaart-Eeend;
 			Console.Write(difff);
-			Console.ReadKey(true);
+			Console.ReadKey(true);*/
 			
 		}
 	}
