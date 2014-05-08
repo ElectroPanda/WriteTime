@@ -15,8 +15,6 @@ namespace WriteText
 		public static void Main(string[] args)
 		{
             //Boolean mark=false;	
-            string dttd;
-            string tddt;
             string[] lines=new string[0];
            
 			string fullpath=@"C:\testfiles\speedtest\1\et.txt";
@@ -46,16 +44,9 @@ namespace WriteText
 		    }
 		    
 		    System.IO.StreamWriter sr=System.IO.File.CreateText(fullpath);
-		    if (lines.Length==1) {
-		    	sr.WriteLine(lines[0]);}
-            //sr.WriteLine(DateTime.Now.Hour.ToString()+":"+DateTime.Now.Minute.ToString()+":"+DateTime.Now.Second.ToString()+","+DateTime.Now.Millisecond.ToString());
-           //string dttd;
-           DateTime teeest=DateTime.Now;
-           dttd=teeest.ToString("hh:mm:ss,ffff");
-           sr.WriteLine(dttd);
+		    if (lines.Length==1) {sr.WriteLine(lines[0]);}
+            sr.WriteLine(DateTime.Now.Hour.ToString()+":"+DateTime.Now.Minute.ToString()+":"+DateTime.Now.Second.ToString()+","+DateTime.Now.Millisecond.ToString());
             sr.Close();
-		    
-            
 		    
 		    
 		    
