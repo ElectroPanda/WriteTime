@@ -40,7 +40,7 @@ namespace WriteText
 		    	
 		    DateTime staaart = DateTime.Now;
 		    System.IO.StreamWriter sr=System.IO.File.CreateText(fullpath);
-		    sr.WriteLine(staaart.ToString("u"));
+		    sr.WriteLine(staaart.ToString("HH:mm:ss.ffff"));
 		    sr.Close();
 		    }	
 		    	
@@ -49,10 +49,10 @@ namespace WriteText
 		    	DateTime laaast=new DateTime();
 		    	DateTime.TryParse(lines[0],out laaast);
 		    	DateTime Looot =DateTime.Now;
-		    	TimeSpan difff=laaast-Looot;
+		    	TimeSpan difff=Looot-laaast;
 				System.IO.StreamWriter fg=System.IO.File.CreateText(fullpath);
 				fg.WriteLine(lines[0]);
-		    	fg.WriteLine(Looot.ToString("u")+"----->"+difff);/*hh:mm:ss.ffff*/
+		    	fg.WriteLine(Looot.ToString("HH:mm:ss.ffff")+"----->"+difff);/*hh:mm:ss.ffff*/
 		    	fg.Close();
 		    
 		    
@@ -67,7 +67,7 @@ namespace WriteText
 		    gf.Close();	
 		    DateTime staaart = DateTime.Now;
 		    System.IO.StreamWriter sr=System.IO.File.CreateText(fullpath);
-		    sr.WriteLine(staaart.ToString("u"));
+		    sr.WriteLine(staaart.ToString("HH:mm:ss.ffff"));
 		    sr.Close();
 		    }
 		    /*System.IO.StreamWriter sr=System.IO.File.CreateText(fullpath);
